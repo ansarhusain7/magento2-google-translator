@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Ansar Husain
+* Google_Translator
+**/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+    <tab id="google_translator" translate="label" sortOrder="0">
+        <label>Google Translator</label>
+    </tab>
+    <section id="translator" translate="label"  sortOrder="100"  showInDefault="1" showInWebsite="1" showInStore="1">
+        <class>google-translator</class>
+        <label>Settings</label>
+        <tab>google_translator</tab>
+        <resource>Google_Translator::translator_config</resource>
+        <group id="general" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>General Configuration</label>
+            <field id="enable" translate="label" type="select" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+            </field>
+            <field id="country" translate="label" type="multiselect" showInDefault="1" showInStore="1" showInWebsite="1">
+                     <label>Choose Languages</label>
+                     <source_model>Google\Translator\Model\Config\Source\Country</source_model>
+                     <can_be_empty>1</can_be_empty>
+                     <comment>Please choose languages which you want to show in language drop down frontend.</comment>
+            </field>
+        </group>
+    </section>
+    </system>
+</config>

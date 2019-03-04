@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * Ansar Husain
+ * Google Translator
+ */
+?>
+<?php if($block->isEnable()) /** if module enable  */ { ?>
+<?php /** @var $block \Google\Translator\Block\Translate */ ?>
+
+<div id="google_translate_element"></div>
+
+
+    <script type="text/javascript">
+        function googleTranslateElementInit()
+        {
+            
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en',
+                    includedLanguages: '<?php echo strtolower($block->getCountry()); ?>',
+                    layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                },'google_translate_element');
+        }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<style type="text/css">
+    #google_translate_element{
+
+        width:15%;float: left;
+    }
+
+    iframe.goog-te-banner-frame{ display: none !important;}
+
+    .goog-logo-link {
+        display:none !important;
+    }
+
+    .goog-te-gadget {
+        color: transparent !important;
+    }
+
+    .goog-te-gadget .goog-te-combo {
+        color: blue !important;
+    }
+
+    body {position: static !important; top:0px !important;}
+
+    .goog-tooltip {
+        display: none !important;
+    }
+    .goog-tooltip:hover {
+        display: none !important;
+    }
+    .goog-text-highlight {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+</style>
+
+<?php } /** module enable check close */?>
